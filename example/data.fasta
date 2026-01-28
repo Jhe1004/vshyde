@@ -1,4 +1,4 @@
->Anemoclema_glauciifolium_19.fasta.transdecoder.pep
+>Anemoclema_glauciifolium_19
 ------------------------------------------------------------TCTCCCCAAATGGGTACA--
 -CTGATAACCTTCAAACCGCCCTGCATTTCAACCTTATCAGCTACTCACCATTCCCGCCAGTTGAAC-------------
 -----------------TTCCCA---AATCCAGAGCTACGCTTCTCACCTAAGAAGCTACACATTTCTGGAAAAACTATC
@@ -124,7 +124,7 @@ AGC---------------------------------AGTCTGGGCAATGATATATGCTCACTTTTGTGG-----------
 --------------------------------------------------------------------------------
 ---------------------------CTCTGTACAGAACAGGTCTTT---TTC---TCTCTTGTTAATGGTGTTATGGC
 TGTAGAACTCATGATGAGCTATAGAAACAATGATGTGTTTTCT---------TCAAACAAGATGGAAGAAAATAATGCAG
->Clematis_armandii.fasta.transdecoder.pep
+>Clematis_armandii
 ---------------------------------------------------------------------ATGGCTACA--
 -CTGTGGACCTTCAGTCCGCCATGCAATTCAACCATAGCAATCACTCACCATTCCCGCCAACTCAAC-------------
 -----------------TTCCCA---AATCCAGAGCTATGCTTCTCAGATAAGAAGCTCCGG---------AAAAGTATC
@@ -250,7 +250,7 @@ GATTCAACCCACTCATGGAGTGTAAGTGACCATGTC--------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -GTAGAACTCATGATGAGCTACAGAAACAATGAAGTGTTTTCT---------TCAAACAAGATCGAAGAG---AATGCAG
->Clematis_crassifolia.fasta.transdecoder.pep
+>Clematis_crassifolia
 ------------------------------------------------------GGCTCTCCCCCCAAAATGGCTACA--
 -CTGTGGACCTTCAGTCCGCCATGCAATTCAACCATAGCAATCAGTCACCATTCCCGCCAACTCAAC-------------
 -----------------TTCCCA---AATCCAGAGCTACGCTTCTCAGATAAGAAGCTCCGG---------AAAAGTATC
@@ -376,7 +376,7 @@ ATTTGCAAGCAGTGAACCTCAAAGCTTCTCGAAGAGGGAT----------------------------------------
 --------------------------------------------------------------------------------
 ---------------------------------------------------------------------------ATGGC
 TGTAGAACTCATGATGAGCTACAGAAACAATGAAGTGTTTTCT---------TCAAACAAGGTCGAAGAG---AATGCAG
->Clematis_hexapetala.fasta.transdecoder.pep
+>Clematis_hexapetala
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -502,7 +502,7 @@ ATTTGCAAGTAGTGAACCTCAAAGCTTCTCGAAGAGGGAT----------------------------------------
 --------------------------------------------------------------TCTTTCTCAGTTTCTCTT
 TTGCTTTCTCTTCTTTAT---------ATAACTCTGCAACAGCTCTTTTCTTTT---ACTCTTGTTAACGGTGTTATGGC
 TGTAGAACTCATGATGAGCTATAGAAACAATGAAGTGTTCTCT---------TCAAACAAGATCGAAGAG---AATGCAG
->Clematis_lancifolia.fasta.transdecoder.pep
+>Clematis_lancifolia
 ---------------------------------------------------------------------ATGGCTACA--
 -CTGTTGACCTTCAGTCCGCCATGCAATTCAACCATAGCAATCACTCACCATTCCCGCCAACTCAAC-------------
 -----------------TTCCCA---AATCCAGAGCTACGCTTCTCAGATAAGAAGCTACGG---------AAAAGTTTC
@@ -628,7 +628,7 @@ GATTCAACCCACTCATGGAGTGTAAGT-----------------------------------------------------
 --------------------------------------------------------------------------------
 ---------------------------------------------------------ACTCTTGTTAACGGTGTTATGGC
 TGTAGAACTCATGATGAGCTATAGAAACAATGAAGTGTTTTCT---------TCAAACAAGATCGAAGAG---AATGCAG
->Clematis_loureiriana.fasta.transdecoder.pep
+>Clematis_loureiriana
 ------------------------------------------------------------TCCCCCAAAATGGCTACA--
 -CTGTTAACCTTCAGTCCGCCATGCAATTCAACAATACCAATTACTCACCATCCCCGCCAATTCAAT-------------
 -----------------TTCCCA---AATCCAGAGCTACGCTTCTCAGACAAGAAGCTACGG---------AAAAGTATC
@@ -754,7 +754,7 @@ ATTTGCAAGTAGTGAACCTCAAAGCTTCTCGAAGAGGGAT----------------------------------------
 --------------------------------------------------------------------------------
 ---------------------------------------GCTCTTTTCTTTTTA---CTCTTGTTAACGGGTGTTATGGC
 TGTAGAGCTCATGATGAGCTATAGAAACAATGAAGTGTTTTCT---------TCAAACAAGATCGAGGAG---AATGCAG
->Clematis_quinquefoliolata.fasta.transdecoder.pep
+>Clematis_quinquefoliolata
 ---------------------------------------------------------------------ATGGCTACA--
 -CTGTTGACCTTCAGTCCGCCGTGCAATTCAACCATAGCAATCACGCACCATTCCCGCCAACTCAAC-------------
 -----------------TTCTCA---AATCCAGAGCTACGCTTCTCAGAAAAGAAGCTACGG---------AAAAGTATC
@@ -880,7 +880,7 @@ ATTTGCAAGTAGTGAACCTCAAAGCTTCTCGAAGAGGGAT----------------------------------------
 --------------------------------------------------------------------------------
 ------TCTCTTCTTTAT---------ATAACTCTGCAACAGCTCTTTTCCTTT---AGTCTTGTTAACGGTGTTATGGC
 TGTAGAACTCATGATGAGCTATAGAAACAATGAAGTGTTTTCT---------TCAAACAAGATCGAAGAG---AATGCAG
->Clematis_terniflora.fasta.transdecoder.pep
+>Clematis_terniflora
 ---------------------------------------------------------------------ATGGCTACA--
 -CTGTTGACCTTCAGTCCGCCCTGCAATTCAACCATAGCAATCACTCACCATTCCCGCCAACTCAAC-------------
 -----------------TTCCCA---AATCCAGAGCTACGCTTCTCAGATAAGAAGCTACGG---------AAAAGTATC
@@ -1006,7 +1006,7 @@ ATTTGCAAGTAGTGAACCTCAAAGCTTCTCGAAGAGGGAT----------------------------------------
 --------------------------------------------------------------------------------
 ---------------TAT---------ATAACTCTGCAACAGCTCTTTTCTTTT---AGTCTTGTTAACGGTGTTATGGC
 TGTAGAACTCATGATGAGCTATAGAAATAATGAAGTGTTTTCT---------TCAAACAAGATCGAAGAG---AATGCAG
->Clematis_uncinata.fasta.transdecoder.pep
+>Clematis_uncinata
 ------------------------------------------------------TGGCTCTCCCTGAAAATGGCTGCA--
 -CTGTTAACCTTCAGTCCGCCATGCAATTCAACAATACCATTTAGTCACCATTCCCGCCAATTCAAC-------------
 -----------------TTCCCA---AATCGAGAGCTACGCTTCTCAGATAAGAAGCTACGG---------AAAAGTATC
