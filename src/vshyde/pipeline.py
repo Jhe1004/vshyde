@@ -110,6 +110,18 @@ def main():
     sensitivity_py = os.path.join(script_dir, "run_sensitivity_analysis.py")
     visual_hyde_py = os.path.join(script_dir, "visual_hyde.py")
 
+    # Input Validation
+    if not os.path.exists(args.input):
+        print(f"Error: Input file not found at '{args.input}'")
+        sys.exit(1)
+    if not os.path.exists(args.tree):
+        print(f"Error: Tree file not found at '{args.tree}'")
+        sys.exit(1)
+
+    # Convert to absolute paths
+    input_file = os.path.abspath(args.input)
+    tree_file = os.path.abspath(args.tree)
+
     # Verify script existence
     for s in [run_ry_hyde_py, sensitivity_py, visual_hyde_py]:
         if not os.path.exists(s):
@@ -142,14 +154,14 @@ def main():
     # Standard Mode
     if run_std:
         print("\n[STEP 1/3] Running Standard Analysis...")
-        input_prefix = os.path.splitext(os.path.basename(args.input))[0]
+        input_prefix = os.path.splitext(os.path.basename(input_file))[0]
         hyde_txt = os.path.join(hyde_std_dir, f"{input_prefix}_analysis", f"{input_prefix}-out.txt")
         
         # 1.1 HyDe
         if not args.force and is_complete(hyde_txt, "file"):
             print(f"  [Skipped] HyDe results already exist and are complete: {hyde_txt}")
         else:
-            run_command([sys.executable, run_ry_hyde_py, "-i", args.input, "-o", args.outgroup, "-r", hyde_std_dir, "-m", "std", "-j", args.threads], log_file=log_file)
+            run_command([sys.executable, run_ry_hyde_py, "-i", input_file, "-o", args.outgroup, "-r", hyde_std_dir, "-m", "std", "-j", args.threads], log_file=log_file)
             
         # 1.2 Sensitivity
         sens_nodes_dir = os.path.join(sens_std_dir, "nodes")
@@ -157,14 +169,14 @@ def main():
              print(f"  [Skipped] Sensitivity processed results already exist in {sens_std_dir}")
         else:
             if os.path.exists(hyde_txt):
-                run_command([sys.executable, sensitivity_py, "-i", hyde_txt, "-t", args.tree, "-o", sens_std_dir, "--mode", "process", "--pthresh", str(args.pthresh), "--gdiff", str(args.gdiff)], log_file=log_file)
+                run_command([sys.executable, sensitivity_py, "-i", hyde_txt, "-t", tree_file, "-o", sens_std_dir, "--mode", "process", "--pthresh", str(args.pthresh), "--gdiff", str(args.gdiff)], log_file=log_file)
             else:
                 print(f"Warning: Could not find HyDe output at {hyde_txt}")
 
     # RY Mode
     if run_ry:
         print("\n[STEP 1/3] Running RY Analysis...")
-        input_prefix = os.path.splitext(os.path.basename(args.input))[0]
+        input_prefix = os.path.splitext(os.path.basename(input_file))[0]
         ry_prefix = input_prefix + "_RY"
         hyde_ry_txt = os.path.join(hyde_ry_dir, f"{ry_prefix}_analysis", f"{ry_prefix}-out.txt")
         
@@ -172,7 +184,7 @@ def main():
         if not args.force and is_complete(hyde_ry_txt, "file"):
             print(f"  [Skipped] RY-HyDe results already exist and are complete: {hyde_ry_txt}")
         else:
-            run_command([sys.executable, run_ry_hyde_py, "-i", args.input, "-o", args.outgroup, "-r", hyde_ry_dir, "-m", "ry", "-j", args.threads], log_file=log_file)
+            run_command([sys.executable, run_ry_hyde_py, "-i", input_file, "-o", args.outgroup, "-r", hyde_ry_dir, "-m", "ry", "-j", args.threads], log_file=log_file)
             
         # 2.2 Sensitivity
         sens_ry_nodes_dir = os.path.join(sens_ry_dir, "nodes")
@@ -180,7 +192,7 @@ def main():
             print(f"  [Skipped] RY Sensitivity processed results already exist in {sens_ry_dir}")
         else:
             if os.path.exists(hyde_ry_txt):
-                run_command([sys.executable, sensitivity_py, "-i", hyde_ry_txt, "-t", args.tree, "-o", sens_ry_dir, "--mode", "process", "--pthresh", str(args.pthresh), "--gdiff", str(args.gdiff)], log_file=log_file)
+                run_command([sys.executable, sensitivity_py, "-i", hyde_ry_txt, "-t", tree_file, "-o", sens_ry_dir, "--mode", "process", "--pthresh", str(args.pthresh), "--gdiff", str(args.gdiff)], log_file=log_file)
             else:
                 print(f"Warning: Could not find HyDe output at {hyde_ry_txt}")
 
@@ -204,7 +216,7 @@ def main():
         for sub in ["nodes", "leaves"]:
             data_path = os.path.join(sens_std_dir, sub)
             if os.path.exists(data_path) and os.listdir(data_path):
-                run_command([sys.executable, visual_hyde_py, "-d", data_path, "-t", args.tree, "-o", os.path.join(viz_dir, "std", sub), "--mode", "std"], log_file=log_file)
+                run_command([sys.executable, visual_hyde_py, "-d", data_path, "-t", tree_file, "-o", os.path.join(viz_dir, "std", sub), "--mode", "std"], log_file=log_file)
 
     # RY Viz
     if run_ry and os.path.exists(sens_ry_dir):
@@ -212,7 +224,7 @@ def main():
         for sub in ["nodes", "leaves"]:
             data_path = os.path.join(sens_ry_dir, sub)
             if os.path.exists(data_path) and os.listdir(data_path):
-                run_command([sys.executable, visual_hyde_py, "-d", data_path, "-t", args.tree, "-o", os.path.join(viz_dir, "ry", sub), "--mode", "std"], log_file=log_file)
+                run_command([sys.executable, visual_hyde_py, "-d", data_path, "-t", tree_file, "-o", os.path.join(viz_dir, "ry", sub), "--mode", "std"], log_file=log_file)
 
     # Diff Viz
     if run_diff and os.path.exists(diff_dir):
@@ -220,7 +232,7 @@ def main():
         for sub in ["nodes", "leaves"]:
             data_path = os.path.join(diff_dir, sub)
             if os.path.exists(data_path) and os.listdir(data_path):
-                run_command([sys.executable, visual_hyde_py, "-d", data_path, "-t", args.tree, "-o", os.path.join(viz_dir, "diff", sub), "--mode", "diff"], log_file=log_file)
+                run_command([sys.executable, visual_hyde_py, "-d", data_path, "-t", tree_file, "-o", os.path.join(viz_dir, "diff", sub), "--mode", "diff"], log_file=log_file)
 
     print(f"\n--- Pipeline Finished! ---")
     print(f"All visualizations saved to: {viz_dir}")
