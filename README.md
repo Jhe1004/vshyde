@@ -1,6 +1,6 @@
 # vshyde: Automated HyDe Analysis Pipeline
 
-A Python package for automating Hybridization Detection (HyDe) analysis, including RY-coding, sensitivity analysis, and visualization.
+Automated HyDe analysis, visualization, and false positive detection pipeline.
 
 ## Features
 
